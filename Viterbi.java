@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package CL_1;
+package Viterbi;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -20,18 +20,14 @@ import java.util.Set;
  *
  * @author janhaviagrawal
  */
-public class CL_1 {
+public class Viterbi {
     public static void main(String[] args) throws FileNotFoundException, IOException 
     {
-        String s1 = "/Users/janhaviagrawal/Downloads/CL_Practical";
+        String s1 = "text file path";
         File folder = new File(s1);
         File[] listOfFiles = folder.listFiles();
-        CL_1 class1 = new CL_1();
-        int[] start_index ={0,2301,4601,6901,9201,11501,13801,16101,18401,20601};     //to denote the starting point for cross validation data
-        int[] end_index = {2300,4600,6900,9200,11500,13800,16100,18400,20600,23345};   //to denote the end point for cross validation data
-        
-       // for(int cv=0;cv<=9;cv++)
-        //{
+        Viterbi class1 = new Viterbi();
+       
         HashMap<String,Integer> word_cat = new HashMap<String,Integer>();
         HashMap<String,Integer> cat_cat = new HashMap<String,Integer>();
         HashMap<String,Integer> cat_occurence = new HashMap<String,Integer>();
@@ -72,8 +68,7 @@ public class CL_1 {
                            train_labels.add(word_tag[word_tag.length-1]);
                            if(word_tag[0].equals(".") || word_tag[0].equals(")"))
                            {
-                       //        if(counter<start_index[cv] || counter>end_index[cv])
-                               {
+
                                if(cat_start.get(train_labels.get(0))!=null)
                                          cat_start.put(train_labels.get(0), cat_start.get(train_labels.get(0))+1);
                                else
